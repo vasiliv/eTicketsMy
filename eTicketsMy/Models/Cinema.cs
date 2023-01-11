@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace eTicketsMy.Models
@@ -21,6 +22,6 @@ namespace eTicketsMy.Models
         public string Description { get; set; }
 
         //Relationships
-        //public List<Movie> Movies { get; set; }
+        public List<Movie> Movies { get; set; }
     }
 }
