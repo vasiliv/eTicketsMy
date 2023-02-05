@@ -18,66 +18,66 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Price)
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.ImageURL)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
+            @*<th>
+            @Html.DisplayNameFor(model => model.StartDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EndDate)
+            @Html.DisplayNameFor(model => model.EndDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MovieCategory)
+            @Html.DisplayNameFor(model => model.MovieCategory)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cinema)
+            @Html.DisplayNameFor(model => model.Cinema)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Producer)
-            </th>
-            <th></th>
+            @Html.DisplayNameFor(model => model.Producer)
+            </th>*@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Price)
+            </td>*@
+                <td>
+                    <img src="@Url.Content(item.ImageURL)" alt="Image" style="width:200px;" />
+                </td>
+                @*<td>
+            @Html.DisplayFor(modelItem => item.StartDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+            @Html.DisplayFor(modelItem => item.EndDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+            @Html.DisplayFor(modelItem => item.MovieCategory)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
+            @Html.DisplayFor(modelItem => item.Cinema.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MovieCategory)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cinema.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producer.Bio)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+            @Html.DisplayFor(modelItem => item.Producer.Bio)
+            </td>*@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
